@@ -1,0 +1,38 @@
+{
+  "title": "Remote App {{ name }}",
+  "searchParams": "Search Params: {{ searchParams }}",
+  "reset": {
+    "counter": "Reset Counter",
+    "searchParam": "Reset Search Param"
+  },
+  "counter": "Click me: {{state}}",
+  "form": {
+    "label": "Remote Form {{ id }}",
+    "submit": "Submit"
+  },
+  "input": {
+    "label": "Remote Input"
+  },
+  "open": "Open",
+  "open_open": "Opened",
+  "item": "Open {{state}}",
+  "item_open": "Opened {{id}}",
+  "navigate": {
+    "back": "Back",
+    "auditLog": "Audit Log",
+    "prompt": "Ainyx Prompts",
+    "block": "Block Navigation",
+    "enable": "Enable Navigation",
+    "custom": {
+      "block": "Block Custom Search Param Navigation",
+      "enable": "Enable Custom Search Param Navigation"
+    }
+  },
+  "snackbar": {
+    "add": "Add Snackbar",
+    "add_error": "Add Error Snackbar",
+    "add_warning": "Add Warning Snackbar",
+    "title": "Snackbar Title",
+    "message": "Snackbar Message"
+  }
+}
