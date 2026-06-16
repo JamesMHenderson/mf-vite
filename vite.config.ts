@@ -5,12 +5,22 @@ import { federation } from '@module-federation/vite';
 export default defineConfig({
   base: '/conductor/remotes/current',
   plugins: [
+    react(),
     federation({
       name: 'current',
       manifest: true,
+      shareStrategy: 'loaded-first',
       filename: 'remoteEntry.js',
       // Modules to expose
       exposes: {
+      },
+      remotes: {
+        template: {
+          type: 'module',
+          name: 'template',
+          entry: 'www.redwoodtest.com/invalid/mf-manifest.json',
+          entryGlobalName: 'template',
+        },
       },
       shared: {
         react: {},
@@ -18,7 +28,6 @@ export default defineConfig({
       },
       dts: false,
     }),
-    react(),
   ],
   server: {
     strictPort: true,
