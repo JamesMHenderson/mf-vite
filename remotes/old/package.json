@@ -1,0 +1,29 @@
+{
+  "name": "old",
+  "description": "Remote module federation application with old dependencies",
+  "private": true,
+  "version": "0.6.1",
+  "type": "module",
+  "scripts": {
+    "dev": "npx vite",
+    "start": "run-p dev preview",
+    "ci:build": "vite build",
+    "ci": "run-s ci:build preview",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@module-federation/vite": "^1.1.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "@vitejs/plugin-react": "^5.1.4",
+    "typescript": "^5.2.2",
+    "vite": "7.3.5"
+  }
+}

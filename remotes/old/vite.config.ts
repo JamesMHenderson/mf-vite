@@ -1,41 +1,38 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { federation } from '@module-federation/vite';
+import { shared } from '@redwood/conductor/federation';
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/conductor/remotes/current',
+  base: '/conductor/remotes/old',
   plugins: [
     react(),
     federation({
-      name: 'current',
+      name: 'old',
       manifest: true,
-      shareStrategy: 'loaded-first',
       filename: 'remoteEntry.js',
       // Modules to expose
       exposes: {
-      },
-      remotes: {
-        template: {
-          type: 'module',
-          name: 'template',
-          entry: 'www.redwoodtest.com/invalid/mf-manifest.json',
-          entryGlobalName: 'template',
-        },
+        './Page': './src/Page.tsx',
       },
       shared: {
-        react: {},
-        'react-dom': {},
+        react: {
+        },
+        'react-dom': {
+        },
       },
       dts: false,
     }),
   ],
   server: {
+    port: 3002,
     strictPort: true,
     host: true,
     allowedHosts: true,
   },
   preview: {
-    port: 3001,
+    port: 3002,
     host: true,
     strictPort: true,
   },
